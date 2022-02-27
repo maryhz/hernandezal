@@ -1,0 +1,63 @@
+body{
+    background-color: #1A1B39;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-container{
+    margin: 150px auto;
+    margin-top: 50px;
+    width: 600px;
+
+}
+
+table{
+background-color: white;
+text-align: left;
+width: 110%;
+height: 50%;
+}
+
+th, td{
+    
+    padding: 20px;
+}
+
+thead{
+    background-color: #242663;
+    border-bottom: solid 5px #676AC2;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #676AC2;
+
+
+}
+
+tr:hover{
+    background-color: #5F61A0;
+    color: white;
+}
+
+h1{
+   margin-bottom: 0cm;
+   color: white;
+   font: weight 600px;
+   font-size: 80px;
+   font-family: Arial;
+   text-transform: uppercase;
+   text-align: center;
+
+}
+
+h3{
+    font-family: Arial;
+    color: white;
+    font-size: 20px;
+}
+
+.icon{
+    color: white;
+    font-size: 6rem;
+}
+/*border: solid 1px black;
