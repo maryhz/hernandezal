@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+ *{
+     margin: 0;
+     padding: 0;
+     font-family: "Montserrat";
+     box-sizing:border-box;
+     
+ }
+
+ h1{
+     font-size:xx-large;
+     
+}
+
+h2{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size:x-large;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 30px;
+}
+
+li:hover{
+    background-color: blue;
+    color: white;
+}
+
+p{
+    font-size:large;
+    
+}
+
+ .MenuLateralResponsivo{
+     position: fixed;
+     left: 0;
+     background: #530101;
+     float: left;
+     width: 200px;
+     height: 100%;
+     overflow: auto;
+     padding: 10px;
+    
+    
+ }
+ .MenuLateralResponsivo ul{
+    list-style: none;
+    text-align: center;
+    
+  }
+  .MenuLateralResponsivo li{
+    background-color: thistle;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    transition: .5s;
+  }
+
+ .content{
+     margin-left: 250px;
+     padding-top: 30px;
+     padding-right: 38px;
+
+ }
+
+ 
+ .MenuLateralResponsivo p{
+     margin-top: 30px;
+     text-align: justify;
+ }
+ 
+/*tablet*/
+ @media only screen and (max-width:800px){
+    .MenuLateralResponsivo{
+        float:none;
+        width: 100%;
+        height: auto;
+        background-color:transparent;
+        position: relative;
+        
+        
+    }
+      
+
+    .MenuLateralResponsivo li{
+      float: left;
+      padding-left: 3.5%;
+      padding-right: 3.5%;
+      
+    }
+    
+    .content{
+        margin-left: 10px;
+        width:100%;
+    }
+    
+ }
+ /*movil*/
+ @media only screen and (max-width:500px){
+   .MenuLateralResponsivo{
+     top: 0;
+     float: none;
+     text-align: center;
+     float:none;
+     position: relative;
+     width: 100%;
+     height: auto;
+     
+     
+   }
+   .MenuLateralResponsivo li{
+     float: none;
+     height: 100%;
+
+     
+   }
+   
+
+   
+ }
