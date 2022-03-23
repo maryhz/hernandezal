@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+ *{
+     margin: 0;
+     padding: 0;
+     font-family: "Montserrat";
+     box-sizing:border-box;
+     
+ }
+
+ h1{
+     font-size:xx-large;
+     
+}
+
+h2{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size:x-large;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 30px;
+}
+
+li:hover{
+    background-color: blue;
+    color: white;
+}
+
+p{
+    font-size:large;
+    
+}
+
+.contenedor{
+    display:flex;
+    flex-direction:row;
+    width:100vw;
+    height:100vh;
+}
+
+.MenuLateralResponsivo{
+     flex-direction: row;
+     height:200vh;
+     background: #530101;
+    
+ }
+ 
+  .MenuLateralResponsivo li{
+    background-color: thistle;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .5s;
+    text-align: center;
+    
+    
+  }
+
+ .content{
+    padding: 1px 16px;
+    flex-grow:2;
+
+ }
+
+ 
+ .MenuLateralResponsivo p{
+     margin-top: 30px;
+     text-align: justify;
+ }
+ 
+/*tablet*/
+ @media only screen and (max-width:1200px){
+    .MenuLateralResponsivo{
+        display: flex;
+        background-color:transparent;
+        justify-content:space-between;
+        
+        
+    }
+
+    .contenedor{
+        flex-direction:column;
+        padding: 10px;
+
+        
+    }
+    
+    .MenuLateralResponsivo li{
+      float: left;
+      display: block;
+      
+    }
+}
+    
+    
+ 
+ /*movil*/
+ @media only screen and (max-width:500px){
+   .MenuLateralResponsivo{
+    flex-direction: column;
+    text-align:center;
+    
+    
+   }
+   
+   .MenuLateralResponsivo li{
+    float: none;
+    
+    
+  }
+  .contenedor{
+    padding: 10px;
+  }
+ }
