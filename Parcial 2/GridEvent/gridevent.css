@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+.contenedor {
+    width:100vw;
+    height:100vh;
+    background-color:beige;
+
+    display:grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 150px 150px 150px 150px;
+    justify-content:center;
+    align-content: center;
+    justify-items: center;
+    align-items:center;
+    grid-auto-flow: dense;
+}
+
+.caja {
+    width: 150px;
+    height: 150px;
+    background-color:coral;
+    text-align:center;
+    border: 1px solid red;
+}
+
+.cajaCyan{
+    background-color:darkcyan;
+}
+
+.cajabtn{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    /*border: 1px solid red;*/
+}
