@@ -13,8 +13,14 @@ El principio de propagación es simple.
 Por ejemplo:
 
 Se tienen 3 elementos anidados **FORM > DIV > P** con un manejador en cada uno de ellos:
+<br>
+
 ![Demostración de código](imagenes/Ejemplo1.png)
+
 ![Demostración de código](imagenes/Ejemplo1.1.png)
+
+
+<br>
 
 Un clic en el elemento del interior `<p>` primero ejecuta onclick:
 - En ese `<p> `.
@@ -24,6 +30,9 @@ Un clic en el elemento del interior `<p>` primero ejecuta onclick:
 
 
 ![Demostración de código](imagenes/Ejemplo1.2.png)
+
+<br>
+
 Así, si se hace **clic en `<p>`**, entonces **se verá 3 alertas: `p → div → form`.** Si se hace clic en `<DIV> se verán 2 alertas: `div → form`.
 
 Este proceso se conoce como **“propagación”** porque **los eventos “se propagan” desde el elemento más al interior, a través de los padres**, como una burbuja en el agua.
