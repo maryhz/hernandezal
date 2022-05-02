@@ -97,9 +97,16 @@
         
         </div>
 
+        <button id="btnModal" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#mymodal">JS-JQ</button>
+        <button id="btnSaveChanges" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#mymodal" >Save Changes</button>
+        <button id="btnAlert" type="reset" class="btn btn-outline-danger">Reset</button>
         
-        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#mymodal" >Save Changes</button>
-        <button type="button" class="btn btn-outline-danger">Reset</button>
+        <div id="myAlert" class="alert alert-danger collapse" role="alert">
+          <button id="alertClose" type="button" class="close" aria-level="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          Se han borrado los campos.
+        </div>
          
         
 
@@ -117,7 +124,7 @@
               <p>La información guardada no podrá ser modificada.</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+              <button id="btn1" type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
               <button id="btn2" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
             </div>
           </div>
@@ -128,18 +135,42 @@
 
       <script>
           $(document).ready(function(){
+            
             $('#btn2').click(function(){
                 swal({
                      icon: "success", timer: 1500, title: 'Listo'
                     });
             })
+
+            $('#btnModal').click(function(){
+            $('#myModal').modal();
+            })
+
+           $('#btnAlert').click(function(){
+            $('#myAlert').show();
+            //$('#myAlert').toggleClass("collapse");
+           })
+
+           $('#alertClose').click(function(){
+            $('#myAlert').hide();
+           //$('#myAlert').toggleClass("collapse");
+           })
+
+           $('#btn1').click(function(){
+            swal("Se canceló la operación.", {
+                timer:1500
+             });
+            })
+           
           })
 
           
           
+          //data-dismiss="alert" lo elimina del documento, collapse lo esconde.
+        
       </script>
       
 </body>
-
-
 </html>
+
+
