@@ -42,6 +42,30 @@ $(document).ready(function(){
 
   })
 
+  $('#btnJson').click(function(){
+    console.log("Click en btn json");
+    $.post('formulario.php',{},function(data){
+     
+      console.log(data);
+      $('#idTitulo').val(data.idTitulo);
+      $('#idRaiting').val(data.idRaiting);
+      $('#idDuracion').val(data.idDuracion);
+      $('#idReseña').val(data.idReseña);
+      $('#idDirectores').val(data.idDirectores);
+      $('#idClasificacion').val(data.idClasificacion);
+      $('#idGeneros').val(data.idGeneros);
+      $('#idAudio').val(data.idAudio);
+
+    },'json');
+  });
+
   
+
+
+
+
+
+
+
   
   //data-dismiss="alert" lo elimina del documento, collapse lo esconde.
