@@ -21,11 +21,11 @@ Con estas sencillas bases, se puede entender el funcionamiento de una promesa en
 #### Promesas en Javascript 
 Las **promesas** en Javascript se representan a través de un `object`, y cada promesa estará en un estado concreto: **pendiente, aceptada o rechazada**. Además, cada promesa tiene los siguientes métodos:
 
-| Métodos             | Descripción    |
-|-------------------|-------------|---------------|--------------|
-| .then(`function`resolve)                     | Ejecuta la función **callback resolve** cuando la promesa se cumple.   |
-| .catch(`function`reject)                     | Ejecuta la función **callback reject** cuando la promesa se rechaza.       |
-| .then(`function`resolve,`function`reject)    | Método equivalente a las dos anteriores en el mismo **.then()**. |
+| Métodos                                      | Descripción                                                                 |
+|----------------------------------------------|-----------------------------------------------------------------------------|
+| .then(`function`resolve)                     | Ejecuta la función **callback resolve** cuando la promesa se cumple.        |
+| .catch(`function`reject)                     | Ejecuta la función **callback reject** cuando la promesa se rechaza.        |
+| .then(`function`resolve,`function`reject)    | Método equivalente a las dos anteriores en el mismo **.then()**.            |
 | .finally(`function`end)                      | Ejecuta la función **callback end** tanto si se cumple como si se rechaza.  |
 
 
