@@ -1,5 +1,6 @@
 <?php
 
+$registro['id_pelicula'] = 'Harry Potter';
 $registro['idTitulo'] = 'Harry Potter';
 $registro['idRaiting'] = '8';
 $registro['idDuracion'] = '148';
