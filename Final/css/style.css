@@ -1,6 +1,40 @@
-button{
-    margin: 5px;
-    margin-top: 30px;
+h1,label{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px #000000;
+}
+
+body
+{
+    background-image: url(https://g2z7g2s8.rocketcdn.me/wp-content/uploads/2020/12/cintas-online.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
 }
 
 
+.container{
+    background-color: rgba(88, 83, 83, 0.5);
+    height: 100%;
+    
+}
+
+div{
+    opacity: 100%;
+    background: none;
+}
+
+#btn{
+    text-align: center;
+    margin: 10px;
+    margin-top: 50px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border: 5px;
+    
+}
+
+#icon{
+text-align:right;
+}

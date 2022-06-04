@@ -12,6 +12,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/index.js"></script>
+   
     
 
 </head>
@@ -20,7 +21,7 @@
   
 
     <div class="container">  
-        <form action="./php/getRegistroBD.php" id="form_session" method="post">
+        <form action="./php/eliminar.php" id="form_session" method="post">
         <div class="row">
             <div class="col-sm-12 text-center head ">
                 <h1 id="myH1">Catálogo de películas</h1>
@@ -28,15 +29,24 @@
         </div>
 
         <div class="row">
+          <fieldset = disabled>
+            <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                <label for="id_pelicula" class="control-label">ID Película</label>
+                <input id="id_pelicula" name="id_pelicula" class="form-control">
+            </div>
+          </fieldset>
+          </div>
+
+        <div class="row">
 
             <div class="col-sm-12 col-md-9 col-lg-6 col1">
                 <label for="titulo" class="control-label">Titulo</label>
-                <input id="idTitulo" type="text" class="form-control" placeholder="Nombre de la película">
+                <input id="idTitulo" type="text" name="titulo" class="form-control" placeholder="Nombre de la película">
             </div>
 
             <div class="form-group col-sm-12 col-md-6 col-lg-3 col2">
                 <label for="raiting">Raiting</label>
-                <select class="form-control" id="idRaiting">
+                <select class="form-control" id="idRaiting" name="raiting">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -52,15 +62,15 @@
         
             <div class="col-sm-12 col-md-6 col-lg-3 col3">
                 <label for="duracion" class="control-label">Duración</label>
-                <input id="idDuracion" type="text" class="form-control" placeholder="Ejemplo: 149 minutos">
+                <input id="idDuracion" type="text" name="duracion" class="form-control" placeholder="Ejemplo: 149 minutos">
             </div>
         </div>
 
 
         <div class="row">
         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-            <label for="idReseña">Reseña</label>
-            <textarea class="form-control" id="idReseña" rows="3"></textarea>
+            <label for="reseña">Reseña</label>
+            <textarea class="form-control" id="idReseña" name="reseña" rows="3"></textarea>
           </div>
         </div>
 
@@ -68,7 +78,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col4">
                 <label for="directores" class="control-label">Director(es)</label>
-                <input id="idDirectores" type="text" class="form-control" placeholder="Nombre(s)">
+                <input id="idDirectores" type="text" name="directores" class="form-control" placeholder="Nombre(s)">
             </div>
         
         </div>
@@ -78,7 +88,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-4  col5">
                 <label for="clasificacion">Clasificación(es)</label>
-                <select class="form-control" id="idClasificacion">
+                <select class="form-control" id="idClasificacion" name="clasificacion">
                     <option>G</option>
                     <option>PG</option>
                     <option>PG-13</option>
@@ -92,21 +102,26 @@
 
             <div class="col-sm-12 col-md-6 col-lg-4  col6">
                 <label for="generos" class="control-label">Géneros</label>
-                <input id="idGeneros" type="text" class="form-control" placeholder="Géneros">
+                <input id="idGeneros" type="text" name="generos" class="form-control" placeholder="Géneros">
             </div>
 
 
             <div class="col-sm-12 col-md-12 col-lg-4  col7">
                 <label for="audio" class="control-label">Audio(s)</label>
-                <input id="idAudio" type="text" class="form-control" placeholder="Ejemplo: Español Latino, Castellano, Inglés, etc.">
+                <input id="idAudio" type="text" name="audio" class="form-control" placeholder="Ejemplo: Español Latino, Castellano, Inglés, etc.">
             </div>
         
-        </div>
+      </div>
 
+        <div id="btn">
+        <button id="btnAgregar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">Agregar</button>
+        <button id="btnConsultar" type="button" class="btn btn-success" >Consultar</button>
+        <button id="btnEliminar" type="button" class="btn btn-danger" data-toggle="modal" data-target="#mymodal2">Eliminar</button>
+        <button id="btnModificar" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#mymodal3">Modificar</button>
+        <button id="btnAlert" type="reset" class="btn btn-secondary">Limpiar campos</button>
+      </div>
         
-        <button id="btnSaveChanges" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#mymodal" >Save Changes</button>
-        <button id="btnAlert" type="reset" class="btn btn-outline-danger">Reset</button>
-        <button id="btnConsultaBD" type="reset" class="btn btn-outline-danger" >Consultar SQL</button>
+        
 
         <div id="myAlert" class="alert alert-danger collapse" role="alert">
           <button id="alertClose" type="button" class="close" aria-level="Close">
@@ -114,30 +129,66 @@
           </button>
           Se han borrado los campos.
         </div>
-        
-        
-
+      
     </form>
     <div class="modal" id="mymodal" data-backdrop="static" data-keyboard="false" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Guardar cambios</h5>
+              <h5 class="modal-title">Agregar nuevo registro</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>La información guardada no podrá ser modificada.</p>
+              <p>¿Está seguro de realizar la siguiente operación?</p>
             </div>
             <div class="modal-footer">
-              <button id="btn1" type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-              <button id="btn2" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+              <button id="btnCancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button id="btnAceptar" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
             </div>
           </div>
         </div>
+      </div>
 
-        
+      <div class="modal" id="mymodal2" data-backdrop="static" data-keyboard="false" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Eliminar registro</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>¿Está seguro de realizar la siguiente operación?</p>
+            </div>
+            <div class="modal-footer">
+              <button id="btnCancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button id="btnSi" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="mymodal3" data-backdrop="static" data-keyboard="false" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modificar campos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>¿Está seguro de realizar la siguiente operación?</p>
+            </div>
+            <div class="modal-footer">
+              <button id="btnCancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button id="btnYes" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       
